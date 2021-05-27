@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ホーム画面です">
     <link rel="icon" href="/TwitterClone/views/img/logo-twitterblue.svg">
-    <!-- bootsyrap CSS  -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-<link href="/TwitterClone/views/css/style.css" rel="stylesheet">
+        <!-- bootsyrap CSS  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="/TwitterClone/views/css/style.css" rel="stylesheet">
     <title>ホーム画面 / TwitterClone</title>
 </head>
 <body class="home">
