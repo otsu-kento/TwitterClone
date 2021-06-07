@@ -1,2 +1,4 @@
 #OSが自動生成するファイル
 .DS_Store
+# 履歴
+.history
