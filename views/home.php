@@ -1,6 +1,7 @@
 <?php
 // エラー表示あり
 ini_set('display_errors', 1);
+error_reporting(E_ALL);
 // 日本時間にする
 date_default_timezone_set('Asia/Tokyo');
 // URLディレクトリ設定
@@ -32,18 +33,60 @@ $view_tweets = [
         'like_id' => 1,
         'like_count' => 1,
     ],
-]
+];
 
 //////////////////////////////////////////
 // 便利な関数
 //////////////////////////////////////////
+/**
+ * 画像ファイル名から画像のURLを生成
+ * @param string $name ファイル名
+ * @param string $type ユーザー画像かツイート画像
+ * @return string
+ */
+function buildImagePath(string $name = null, string $type)
+{
+    if ($type === 'user' && !isset($name)) {
+        return HOME_URL . 'views/img/icon-default-user.svg';
+    }
+
+    return HOME_URL . 'views/img_uploaded/' . $type . '/' . htmlspecialchars($name);
+}
 /**
  * 指定した日時からどれだけ経過したかを取得
  * 
  * @param string $datetime 日時
  * @return string
  */
+function convertToDayTimeAgo(string $datetime)
+{
+    $unix = strtotime($datetime);
+    $now = time();
+    $diff_sec = $now - $unix;
 
+    if ($diff_sec < 60) {
+        $time = $diff_sec;
+        $unix = '秒前';
+    } elseif ($diff_sec < 3600) {
+        $time = $diff_sec / 60;
+        $unix = '分前';
+    } elseif ($diff_sec < 86400) {
+        $time = $diff_sec / 3600;
+        $unix = '時間前';
+    } elseif ($diff_sec < 2764000) {
+        $time = $diff_sec / 86400;
+        $unix = '日前';
+    } else {
+        if(date('Y') != date('Y', $unix)) {
+            $time = date('Y年m月j日', $unix);
+        } else {
+            $time = date('m月j日', $unix); 
+        }
+        return $time;
+    }
+
+    return (int)$time . $unix; 
+}
 ?>
 
 <!DOCTYPE html>
@@ -105,21 +148,21 @@ $view_tweets = [
                     <div class="tweet">
                         <div class="user">
                             <a href="profile.php?user_id=1">
-                            <img src="<?= HOME_URL; ?>views/img_uploaded/user/sample-person.jpg" alt="マイアイコン">
+                                <img src="<?= buildImagePath($view_tweet['user_image_name'], 'user'); ?>" alt="マイアイコン">
                             </a>
                         </div>
                         <div class="content">
                             <div class="name">
-                                <a href="profile.php?user_id=<?= $view_tweet['user_id']; ?>">
-                                    <span class="nickname"><?= $view_tweet['user_nickname']; ?></span>
-                                    <span class="user-name">@<?= $view_tweet['user_name']; ?> ・<?= $view_tweet['tweet_created_at']; ?></span>
+                                <a href="profile.php?user_id=<?= htmlspecialchars($view_tweet['user_id']); ?>">
+                                    <span class="nickname"><?= htmlspecialchars($view_tweet['user_nickname']); ?></span>
+                                    <span class="user-name">@<?= htmlspecialchars($view_tweet['user_name']); ?> ・<?= convertToDayTimeAgo($view_tweet['tweet_created_at']); ?></span>
                                 </a>
                             </div>
 
-                            <p><?= $view_tweet['tweet_body']; ?></p>
+                            <p><?= htmlspecialchars($view_tweet['tweet_body']); ?></p>
 
-                            <?php if(isset($view_tweet['tweet_image_name'])): ?>
-                                <img src="<?= HOME_URL; ?>views/img_uploaded/tweet/<?= $view_tweet['tweet_image_name']; ?>" alt="ツイート画像" class="post-image">
+                            <?php if (isset($view_tweet['tweet_image_name'])): ?>
+                                <img src="<?= buildImagePath($view_tweet['tweet_image_name'], 'tweet'); ?>" alt="ツイート画像" class="post-image">
                             <?php endif; ?>
 
                             <div class="icon-list">
@@ -132,7 +175,7 @@ $view_tweets = [
                                     }
                                     ?>
                                 </div>
-                                <div class="like-count"><?= $view_tweet['like_count']; ?></div>
+                                <div class="like-count"><?= htmlspecialchars($view_tweet['like_count']); ?></div>
                             </div>
                         </div>
                     </div>
