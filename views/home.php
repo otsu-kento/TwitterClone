@@ -97,9 +97,16 @@ function convertToDayTimeAgo(string $datetime)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ホーム画面です">
     <link rel="icon" href="<?= HOME_URL; ?>views/img/logo-twitterblue.svg">
-        <!-- bootsyrap CSS  -->
+    <!-- bootstrap CSS  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="<?= HOME_URL; ?>views/css/style.css" rel="stylesheet">
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous" defer></script>
+    <!--  いいね！JS-->
+    <script src="<?= HOME_URL; ?>views/js/like.js" defer></script>
+
     <title>ホーム画面 / TwitterClone</title>
 </head>
 <body class="home">
@@ -113,7 +120,7 @@ function convertToDayTimeAgo(string $datetime)
                     <li class="nav-item"><a href="notification.php" class="nav-link"><img src="<?= HOME_URL; ?>views/img/icon-notification.svg" alt="ベルアイコン"></a></li>
                     <li class="nav-item"><a href="profile.php" class="nav-link"><img src="<?= HOME_URL; ?>views/img/icon-profile.svg" alt="プロフィールアイコン"></a></li>
                     <li class="nav-item"><a href="post.php" class="nav-link"><img src="<?= HOME_URL; ?>views/img/icon-post-tweet-twitterblue.svg" alt="羽アイコン" class="post-tweet"></a></li>
-                    <li class="nav-item my-icon"><img src="<?= HOME_URL; ?>views/img_uploaded/user/sample-person.jpg" alt="マイアイコン"></li>
+                    <li class="nav-item my-icon"><img src="<?= HOME_URL; ?>views/img_uploaded/user/sample-person.jpg" class="js-popover" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="<a href='profile.php'>プロフィール</a><br><a href='sign-out.php'>ログアウト</a>" data-bs-html="true" alt="マイアイコン"></li>
                 </ul>
             </div>
         </div>
@@ -166,7 +173,7 @@ function convertToDayTimeAgo(string $datetime)
                             <?php endif; ?>
 
                             <div class="icon-list">
-                                <div class="like">
+                                <div class="like js-like" data-like-id="<?= $view_tweet['like_id']; ?>">
                                     <?php
                                     if (isset($view_tweet['like_id'])){
                                         echo '<img src="' . HOME_URL . 'views/img/icon-heart-twitterblue.svg" alt="青いハートアイコン">';
@@ -175,7 +182,7 @@ function convertToDayTimeAgo(string $datetime)
                                     }
                                     ?>
                                 </div>
-                                <div class="like-count"><?= htmlspecialchars($view_tweet['like_count']); ?></div>
+                                <div class="like-count js-like-count"><?= htmlspecialchars($view_tweet['like_count']); ?></div>
                             </div>
                         </div>
                     </div>
@@ -186,5 +193,12 @@ function convertToDayTimeAgo(string $datetime)
         <?php endif; ?>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            $('.js-popover').popover({
+                container: 'body'
+            })
+        }, false);
+    </script>
 </body>
 </html>
