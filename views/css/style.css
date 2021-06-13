@@ -1,4 +1,116 @@
-/* å…¨ä½“ */
+/* 
+user agent stylesheet リセット 
+****/
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* 
+全体 
+****/
+html {
+    height: 100%;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -51,7 +163,9 @@ a {
     text-decoration: none;
 }
 
-/* ã‚µã‚¤ãƒ‰ */
+/* 
+サイド 
+****/
 .side .side-inner {
     top: 0px;
     padding-top: 20px;
@@ -104,7 +218,9 @@ a {
     }
 }
 
-/* ãƒ¡ã‚¤ãƒ³ */
+/* 
+メイン 
+****/
 .main .main-header {
     padding: 20px;
     border-bottom: 1px solid #eef;
@@ -117,7 +233,9 @@ a {
     font-weight: bold;
 }
 
-/* ãƒ›ãƒ¼ãƒ  */
+/* 
+ホーム  
+****/
 .home .tweet-post {
     display: flex;
     padding: 10px;
@@ -245,3 +363,48 @@ a {
         margin-top: 10px;
     }
 }
+
+/* 
+会員登録（ログイン共用） 
+****/
+body.signup {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    height: 100%;
+}
+.signup {
+    background-color: #123;
+    color: #fff;
+}
+.signup .form-signup {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+.signup .logo-white {
+    margin-bottom: 30px;
+    width: 50px;
+}
+.signup h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.signup input {
+    margin-bottom: 10px;
+    background-color: #123;
+    border-color: #456;
+    color: #fff;
+}
+.signup input:focus {
+    background-color: #123;
+    border-color: #1af;
+    color: #fff;
+}
+
+.signup input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #123 inset;
+}
+
