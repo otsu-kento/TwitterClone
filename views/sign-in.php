@@ -1,13 +1,13 @@
+<?php
+// 設定関係を読み込む
+include_once('../config.php');
+// 便利な関数を読み込む
+include_once('../util.php');
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/TwitterClone/views/img/logo-twitterblue.svg">
-    <!-- bootstrap CSS  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link href="/TwitterClone/views/css/style.css" rel="stylesheet">
+    <?php include_once('../views/common/head.php'); ?>
     <title>ログイン画面 / TwitterClone</title>
     <meta name="description" content="ログイン画面です">
 </head>
@@ -23,5 +23,7 @@
             <p class="mt-2 mb-3 text-muted">&copy; 2021</p>
         </form>
     </main>
+
+    <?php include_once('../views/common/foot.php'); ?>
 </body>
 </html>
