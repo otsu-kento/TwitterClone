@@ -17,7 +17,7 @@
             <img src="/TwitterClone/views/img/logo-white.svg" alt="" class="logo-white">
             <h1>アカウントを作る</h1>
             <input type="text" class="form-control" name="nickname" placeholder="ニックネーム" maxlength="50" required autofocus>
-            <input type="text" class="form-control" name="name" autocomplete="off" placeholder="ユーザー名、例)taro123" maxlength="50" required>
+            <input type="text" class="form-control" name="name" autocomplete="off" placeholder="ユーザー名、例)hello123" maxlength="50" required>
             <input type="email" class="form-control" name="mail" placeholder="メールアドレス" maxlength="254" required>
             <input type="password" class="form-control" name="password" autocomplete="off" placeholder="パスワード" miinlength="4" maxlength="128" required>
             <button class="w-100 btn btn-lg" type="submit">登録する</button>
