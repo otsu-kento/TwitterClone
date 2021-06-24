@@ -16,7 +16,7 @@ include_once('../util.php');
         <form action="sign-in.php" method="post">
             <img src="/TwitterClone/views/img/logo-white.svg" alt="" class="logo-white">
             <h1>Twitterクローンにログイン</h1>
-            <input type="email" class="form-control" name="mail" placeholder="メールアドレス" required autofocus>
+            <input type="email" class="form-control" name="email" placeholder="メールアドレス" required autofocus>
             <input type="password" class="form-control" name="password" autocomplete="off" placeholder="パスワード" required>
             <button class="w-100 btn btn-lg" type="submit">ログイン</button>
             <p class="mt-3 mb-2"><a href="sign-up.php">会員登録する</a></p>
