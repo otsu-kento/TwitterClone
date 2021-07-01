@@ -18,6 +18,12 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
     background: transparent;
 }
 
+input, button, textarea, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 body {
     line-height: 1;
 }
@@ -157,6 +163,10 @@ a {
     font-size: 13px;
     color: #1af;
     text-decoration: none;
+}
+
+.text-sm {
+    font-size: 0.7rem;
 }
 
 /* 
