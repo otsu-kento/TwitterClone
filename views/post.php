@@ -1,20 +1,15 @@
-<?php
-// 設定関係を読み込む
-include_once('../config.php');
-// 便利な関数を読み込む
-include_once('../util.php');
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <?php include_once('../views/common/head.php'); ?>
-    <title>つぶやく画面 / TwitterClone</title>
+    <title>つぶやく画面 / Twitterクローン</title>
     <meta name="description" content="つぶやく画面です">
 </head>
+
 <body class="home">
     <div class="container">
-    <?php include_once('../views/common/side.php'); ?>
+        <?php include_once('../views/common/side.php'); ?>
 
         <div class="main">
             <div class="main-header">
@@ -23,7 +18,7 @@ include_once('../util.php');
 
             <div class="tweet-post">
                 <div class="my-icon">
-                    <img src="<?= HOME_URL; ?>views/img_uploaded/user/sample-person.jpg" alt="マイアイコン">
+                    <img src="<?=htmlspecialchars($view_user['image_path']); ?>" alt="">
                 </div>
                 <div class="input-area">
                     <form action="post.php" method="post" enctype="multipart/form-data">
@@ -32,7 +27,7 @@ include_once('../util.php');
                             <div class="mb-0">
                                 <input type="file" name="image" class="form-control form-control-sm">
                             </div>
-                            <buttoon class="btn" type="submit">つぶやく</buttoon>
+                            <button class="btn" type="submit">つぶやく</button>
                         </div>
                     </form>
                 </div>
@@ -44,4 +39,5 @@ include_once('../util.php');
 
     <?php include_once('../views/common/foot.php'); ?>
 </body>
+
 </html>
