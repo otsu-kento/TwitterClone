@@ -19,7 +19,7 @@
         <?php endif; ?>
 
         <div class="icon-list">
-            <div class="like js-like" data-like-id="<?= $view_tweet['like_id']; ?>">
+            <div class="like js-like" data-like-id="<?= htmlspecialchars($view_tweet['like_id']); ?>">
                 <?php
                 if (isset($view_tweet['like_id'])){
                     echo '<img src="' . HOME_URL . 'views/img/icon-heart-twitterblue.svg" alt="青いハートアイコン">';
