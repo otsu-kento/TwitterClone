@@ -1,6 +1,6 @@
 <div class="tweet">
     <div class="user">
-        <a href="profile.php?user_id=1">
+        <a href="profile.php?user_id=<?= htmlspecialchars($view_tweet['user_id']); ?>">
             <img src="<?= buildImagePath($view_tweet['user_image_name'], 'user'); ?>" alt="マイアイコン">
         </a>
     </div>
@@ -19,7 +19,7 @@
         <?php endif; ?>
 
         <div class="icon-list">
-            <div class="like js-like" data-like-id="<?= htmlspecialchars($view_tweet['like_id']); ?>">
+            <div class="like js-like" data-tweet-id="<?= htmlspecialchars($view_tweet['tweet_id']); ?>" data-like-id="<?= htmlspecialchars($view_tweet['like_id']); ?>">
                 <?php
                 if (isset($view_tweet['like_id'])){
                     echo '<img src="' . HOME_URL . 'views/img/icon-heart-twitterblue.svg" alt="青いハートアイコン">';
