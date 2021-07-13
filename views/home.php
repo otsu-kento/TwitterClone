@@ -15,7 +15,7 @@
             </div>
             <div class="tweet-post">
                 <div class="my-icon">
-                    <img src="<?=htmlspecialchars($view_user['image_path']); ?>" alt="マイアイコン">
+                    <img src="<?= htmlspecialchars($view_user['image_path']); ?>" alt="マイアイコン">
                 </div>
                 <div class="input-area">
                     <form action="post.php" method="post" enctype="multipart/form-data">
@@ -24,7 +24,7 @@
                             <div class="mb-0">
                                 <input type="file" name="image" class="form-control form-control-sm">
                             </div>
-                            <buttoon class="btn" type="submit">つぶやく</buttoon>
+                            <button class="btn" type="submit">つぶやく</buttoon>
                         </div>
                     </form>
                 </div>
