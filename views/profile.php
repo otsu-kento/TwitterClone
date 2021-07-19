@@ -31,7 +31,7 @@
                         <div class="modal fade" id="js-modal" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
-                                    <form action="profile.php" method="post" enctype="multipart/form-data">
+                                    <form action="Profile.php" method="post" enctype="multipart/form-data">
                                         <div class="modal-header">
                                             <h5 class="modal-title">プロフィールを編集</h5>
                                             <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>

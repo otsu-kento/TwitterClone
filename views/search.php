@@ -14,7 +14,7 @@
                 <h1>検索</h1>
             </div>
 
-            <form action="search.php" method=get>
+            <form action="Search.php" method=get>
                 <div class="search-area">
                     <input type="text" class="form-control" placeholder="キーワード検索" name="keyword" value="<?= htmlspecialchars($view_keyword); ?>">
                     <button type=submit class="btn">検索</button>

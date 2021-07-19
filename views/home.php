@@ -18,7 +18,7 @@
                     <img src="<?= htmlspecialchars($view_user['image_path']); ?>" alt="マイアイコン">
                 </div>
                 <div class="input-area">
-                    <form action="post.php" method="post" enctype="multipart/form-data">
+                    <form action="Post.php" method="post" enctype="multipart/form-data">
                         <textarea name="body" placeholder="いまどうしてる？" maxlength="140"></textarea>
                         <div class="bottom-area">
                             <div class="mb-0">
