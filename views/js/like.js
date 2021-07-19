@@ -13,7 +13,7 @@ $(function () {
         if (like_id) {
             // いいね！取り消し
             $.ajax({
-                url: 'like.php',
+                url: 'Like.php',
                 type: 'POST',
                 data: {
                     'like_id': like_id
@@ -37,7 +37,7 @@ $(function () {
         } else {
             // いいね！付与
             $.ajax({
-                url: 'like.php',
+                url: 'Like.php',
                 type: 'POST',
                 data: {
                     'tweet_id': tweet_id
