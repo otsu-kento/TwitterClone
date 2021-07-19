@@ -17,7 +17,7 @@ include_once '../models/Follows_model.php';
 $user = getUserSession();
 if (!$user) {
     // ログインしていない
-    header('Location:' . HOME_URL . 'controllers/sign-in.php');
+    header('Location:' . HOME_URL . 'controllers/Sign-in.php');
     exit;
 }
 
