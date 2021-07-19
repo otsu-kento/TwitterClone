@@ -21,7 +21,7 @@
             <input type="email" class="form-control" name="email" autocomplete="off" placeholder="メールアドレス" required autofocus>
             <input type="password" class="form-control" name="password" autocomplete="off" autocomplete="off" placeholder="パスワード" required>
             <button class="w-100 btn btn-lg" type="submit">ログイン</button>
-            <p class="mt-3 mb-2"><a href="Sign-up.php">会員登録する</a></p>
+            <p class="mt-3 mb-2"><a href="sign-up.php">会員登録する</a></p>
             <p class="mt-2 mb-3 text-muted">&copy; 2021</p>
         </form>
     </main>

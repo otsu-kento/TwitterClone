@@ -34,7 +34,7 @@ if (isset($_POST['body'])) {
 
     if (createTweet($data)) {
         // ホーム画面に遷移
-        header('Location: ' . HOME_URL . 'controllers/Home.php');
+        header('Location: ' . HOME_URL . 'controllers/home.php');
         exit;
     }
 }

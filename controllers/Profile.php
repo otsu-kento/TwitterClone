@@ -46,7 +46,7 @@ if (isset($_POST['nickname']) && isset($_POST['name']) && isset($_POST['email'])
         $user = findUser($user['id']);
         saveUserSession($user);
         // リロード
-        header('Location:' . HOME_URL . 'controllers/Profile.php');
+        header('Location:' . HOME_URL . 'controllers/profile.php');
     }
 }
 

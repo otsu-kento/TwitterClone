@@ -33,18 +33,11 @@ if (isset($_POST['nickname']) && isset($_POST['name']) && isset($_POST['email'])
         $error_messages[] = 'メールアドレスが不正です。';
     }
 
-    // 既存チェック
-    if (findUser($data['email'])) {
-        $error_messages[] = 'このメールアドレスは使用されています。';
-    }
-    if (findUser($data['name'])) {
-        $error_messages[] = 'このユーザー名は使用されています。';
-    }
     // エラーがなければ登録する
     if (!$error_messages) {
         if (createUser($data)) {
             // ログイン画面に遷移
-            header('Location:' . HOME_URL . 'controllers/Sign-in.php');
+            header('Location:' . HOME_URL . 'controllers/sign-in.php');
             exit;
         }
     }
