@@ -44,7 +44,7 @@ if (isset($_POST['nickname']) && isset($_POST['name']) && isset($_POST['email'])
     if (!$error_messages) {
         if (createUser($data)) {
             // ログイン画面に遷移
-            header('Location:' . HOME_URL . 'controllers/sign-in.php');
+            header('Location:' . HOME_URL . 'controllers/Sign-in.php');
             exit;
         }
     }
