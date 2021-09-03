@@ -8,7 +8,7 @@
 <body class="signup text-center">
     <main class="form-signup">
         <form action="Sign-in.php" method="post">
-            <img src="<?php echo HOME_URL; ?>views/img/logo-white.svg" alt="" class="logo-white">
+            <img src="<?php echo HOME_URL; ?>views/img/icon-logo-white.png" alt="" class="logo-white">
             <h1>Twitterクローンにログイン</h1>
 
             <?php if (isset($view_try_login_result) && $view_try_login_result === false): ?>
